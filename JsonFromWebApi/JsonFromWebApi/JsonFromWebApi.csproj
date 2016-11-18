@@ -167,6 +167,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AlwaysJsonContent.cs" />
+    <Compile Include="Models\MyJsonGeoObject.cs" />
     <Compile Include="Models\MyJsonObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConverters\GeoPoint.cs" />

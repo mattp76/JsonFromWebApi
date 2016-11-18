@@ -39,16 +39,37 @@ namespace JsonFromWebApi.Controllers
         }
 
         // GET api/values
+        //[HttpGet, ActionName("getgeo")]
+        //public HttpResponseMessage GetGeo(GeoPoint location)
+        //{
+
+
+        //    string lnglat = string.Format("Lng:{0} Lat:{1}", location.Longitude, location.Latitude);
+
+        //    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, lnglat);
+
+        //    return response;
+        //}
+
+
+        // GET api/values
         [HttpGet, ActionName("getgeo")]
-        public HttpResponseMessage GetGeo(GeoPoint location)
+        public MyJsonGeoObject GetGeo(GeoPoint location)
         {
 
 
-            string lnglat = string.Format("Lng:{0} Lat:{1}", location.Longitude, location.Latitude);
+           // string lnglat = string.Format("Lng:{0} Lat:{1}", location.Longitude, location.Latitude);
 
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, lnglat);
+          //  HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, lnglat);
 
-            return response;
+            MyJsonGeoObject jsonGeo = new MyJsonGeoObject()
+            {
+                lat = location.Latitude,
+                lng = location.Longitude
+            };
+
+
+            return jsonGeo;
         }
 
 
